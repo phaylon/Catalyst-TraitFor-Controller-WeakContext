@@ -40,7 +40,7 @@ __END__
     sub foo: Chained('/') {
         my ($self, $ctx) = @_;
 
-        # no leaking!
+        # no leaking $ctx!
         $ctx->stash(uri_for_profile => sub {
             my ($username) = @_;
             $ctx->uri_for_action('/profile/view', $username);
